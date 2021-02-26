@@ -40,6 +40,7 @@ These elements are required to run terraform scripts.
 |------|-------------|
 | AWS Credentials | Assuming that AWS Access keys have been configured using 'aws configure' command |
 | terraform | Terraform executable files has be to configured to run scripts |
+| [welcome.py][welcome] | Lambda Python function |
 
 Credential information can be updated using [provider.tf][provider] file.
 
@@ -87,9 +88,10 @@ Do not forget to desctroy deployed stacks when not using.
 terraform destroy
 ```
 
-[variables]: ./variables.tf
-[provider]: ./provider.tf
-[lambda-iam]: ./lambda-iam.tf
-[lambda]: ./lambda.tf
-[outputs]: ./outputs.tf
-[testing]: ./env.test.tfvars
+[variables]: ./infra/variables.tf
+[provider]: ./infra/provider.tf
+[lambda-iam]: ./infra/lambda-iam.tf
+[lambda]: ./infra/lambda.tf
+[outputs]: ./infra/outputs.tf
+[testing]: ./infra/env.test.tfvars
+[welcome]: ./src/welcome.py
