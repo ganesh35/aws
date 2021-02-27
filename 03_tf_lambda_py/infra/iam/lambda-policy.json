@@ -1,0 +1,27 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+	  {
+		"Sid": "Stmt1614382054775",
+		"Action": [
+		  "ec2:DescribeAddresses"
+		],
+		"Effect": "Allow",
+		"Resource": "*"
+	  },
+	  {
+		"Sid": "Stmt1614382066907",
+		"Action": "logs:*",
+		"Effect": "Allow",
+		"Resource": "*"
+	  },
+	  {
+		"Sid": "Stmt1614382111924",
+		"Action": [
+		  "ses:SendEmail"
+		],
+		"Effect": "Allow",
+		"Resource": "*"
+	  }
+	]
+  }

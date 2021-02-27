@@ -17,7 +17,7 @@ Create and deploy a basic Python Lambda Function using Terraform.
 
 ##  Folder structure
 ```bash
-├── terraform_01
+├── 01_tf_lambda_py
 |   ├── infra/
 |   |   └── iam/
 |   |   |   ├── lambda-policy.json
