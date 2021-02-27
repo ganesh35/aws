@@ -1,9 +1,8 @@
-# Lambda (Python) Function with Terraform
-Create and deploy a scheduled Python Lambda Function using Terraform. 
-Purpose of this function is send notification when an EC2 instance stops running.
+# Lambda (NodeJs) Function with Terraform
+Create and deploy a basic NodeJs Lambda Function using Terraform. 
 
-- [Lambda (Python) Function with Terraform](#lambda-python-function-with-terraform)
-  - [Required Resources](#required-resources)
+- [Lambda (NodeJs) Function with Terraform](#lambda-nodejs-function-with-terraform)
+  - [Elements](#elements)
   - [Folder structure](#folder-structure)
   - [Requirements](#requirements)
   - [Terraform scripts](#terraform-scripts)
@@ -11,15 +10,10 @@ Purpose of this function is send notification when an EC2 instance stops running
   - [Switching / Creating Environments](#switching--creating-environments)
   - [Destroy](#destroy)
   
-## Required Resources 
+## Elements 
     - Terraform 
-    - Lambda Function (Python)
-    - IAM Role for Lambda to access SNS topic and CloudWatch Logs
-    - SES
-    - EC2
-    - SNS Topic
-    - CloudWatch Events - to schedule
-    - **Note: Email used in the script must be verified by SES.**
+    - Lambda Function (NodeJs)
+    - IAM Role
 
 ##  Folder structure
 ```bash
@@ -34,7 +28,7 @@ Purpose of this function is send notification when an EC2 instance stops running
 |   |   ├── lambda-iam.tf
 |   |   ├── lambda.tf
 |   ├── src/
-|   |   └── unused-eips.py
+|   |   └── welcome.js
 |   ├── outputs/
 |   └── README.md
 ```
@@ -46,7 +40,7 @@ These elements are required to run terraform scripts.
 |------|-------------|
 | AWS Credentials | Assuming that AWS Access keys have been configured using 'aws configure' command |
 | terraform | Terraform executable files has be to configured to run scripts |
-| [unused-eips.py][unused-eips] | Lambda Python function |
+| [welcome.js][welcome] | Lambda NodeJs function |
 
 Credential information can be updated using [provider.tf][provider] file.
 
@@ -100,4 +94,4 @@ terraform destroy
 [lambda]: ./infra/lambda.tf
 [outputs]: ./infra/outputs.tf
 [testing]: ./infra/env.test.tfvars
-[unused-eips]: ./src/unused-eips.py
+[welcome]: ./src/welcome.js
