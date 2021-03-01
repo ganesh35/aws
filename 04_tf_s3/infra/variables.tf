@@ -11,5 +11,5 @@ variable "env" {
 
 variable "bucket_name" {
   description = "Name of the bucket"
-  default     = "hello"
+  default     = "helloWorld"
 }
