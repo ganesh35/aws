@@ -11,7 +11,7 @@ variable "env" {
 
 variable "profile" {
   description = "Profile for shared credentials"
-  default     = "default"
+  default     = "dyn_cidr_blocks"
 }
 
 
@@ -26,6 +26,6 @@ module "my_vpc" {
   tenancy     = "default"
   vpc_id      = module.my_vpc.vpc_id
   subnet_cidr = "192.168.1.0/24"
-  env = "test"
-  profile = "dyn_cidr_blocks"
+  env = var.env
+  profile = var.profile
 }
