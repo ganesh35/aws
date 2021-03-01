@@ -59,14 +59,11 @@ Credential information can be updated using [provider.tf][provider] file.
 Once you have the repository. Initialize the terraform to get required modules and then run terraform plan to see what all resources terraform will create.
 
 ```sh
-cd terraform_01/infra
+cd 03_tf_lambda_nodejs/infra
 terraform init
 terraform plan      
 terraform apply -var-file="env.test.tfvars"
 ```
-
-This will create the whole cluster and will give an endpoint of a loadbalancer on which application will be running.
-Accessing this endpoint in browser should show the notejam home page which means this deployment is successful.
 
 
 ## Switching / Creating Environments

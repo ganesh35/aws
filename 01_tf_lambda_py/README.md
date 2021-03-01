@@ -65,10 +65,6 @@ terraform plan
 terraform apply -var-file="env.test.tfvars"
 ```
 
-This will create the whole cluster and will give an endpoint of a loadbalancer on which application will be running.
-Accessing this endpoint in browser should show the notejam home page which means this deployment is successful.
-
-
 ## Switching / Creating Environments
 
 Create more environments from the attached file [env.test.tfvars][testing]
