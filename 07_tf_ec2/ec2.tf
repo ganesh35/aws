@@ -1,6 +1,6 @@
 data "aws_ami" "amazon-linux-2" {
   most_recent = true
-  owners = ["amazon"]
+  owners      = ["amazon"]
 
   filter {
     name = "name"
@@ -18,12 +18,12 @@ data "aws_ami" "amazon-linux-2" {
 
 
 resource "aws_instance" "jenkins-instance" {
-  ami             = data.aws_ami.amazon-linux-2.id
-  instance_type   = var.instance_type
-  key_name        = var.keyname
-  vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
-  subnet_id          = aws_subnet.main.id
-  user_data = file("install_jenkins.sh")
+  ami                         = data.aws_ami.amazon-linux-2.id
+  instance_type               = var.instance_type
+  key_name                    = var.keyname
+  vpc_security_group_ids      = [aws_security_group.sg_allow_ssh_jenkins.id]
+  subnet_id                   = aws_subnet.main.id
+  user_data                   = file("install_jenkins.sh")
   associate_public_ip_address = true
   tags = {
     "Name" = "${var.stack}-${var.env}-instance"
@@ -33,7 +33,7 @@ resource "aws_instance" "jenkins-instance" {
 resource "aws_security_group" "sg_allow_ssh_jenkins" {
   name        = "allow_ssh_jenkins"
   description = "Allow SSH and Jenkins inbound traffic"
-  vpc_id     = aws_vpc.main.id
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     from_port   = 22
@@ -50,10 +50,10 @@ resource "aws_security_group" "sg_allow_ssh_jenkins" {
   }
 
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
