@@ -11,7 +11,7 @@ Deploy EC2 instance with ssh access
 - Download puttygen.exe from <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
 - Open puttygen.exe
 - Click on "Generate" button and wait for a few moments
-  [![Generate key pair](images/putty_gen.png)]
+  [![Generate key pair](assets/putty_gen.png)]
 - Copy and make a note of Public key
 - Click on button "Save private key" and give a name (in this example: tf-jenkins-aws)
 - Remember to use the same keypair name everywhere.
@@ -42,10 +42,10 @@ terraform apply
 -  Copy "public ip" from the output of terraform apply
 -  Open putty.exe
 -  Enter ubuntu@<public_ip>
-    [![Putty session](images/putty_session.png)]
+    [![Putty session](assets/putty_session.png)]
 -  Click on Category -> Connection -> SSH -> Auth
 -  Select Private key file for authentication
-   [![Putty Auth](images/putty_auth.png)]
+   [![Putty Auth](assets/putty_auth.png)]
 - Click on "Open" button
 - It should log you in and opens up command prompt
   
