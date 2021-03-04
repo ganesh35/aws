@@ -81,11 +81,6 @@ resource "aws_eip" "webserver" {
   depends_on = [aws_internet_gateway.main]
 }
 
-# Key Pair
-resource "aws_key_pair" "default" {
-  key_name   = var.keyname
-  public_key = var.public_key
-}
 
 output "vpc_id" {
   value = aws_vpc.main.id
